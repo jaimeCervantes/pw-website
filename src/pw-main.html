@@ -57,10 +57,24 @@
 
       .drawer-list a.iron-selected {
         color: black;
-
         font-weight: bold;
       }
 
+      .pw-menu a.iron-selected .home{
+        color: var(--paper-red-500);
+      }
+
+      .pw-menu a.iron-selected .services{
+        color: var(--paper-blue-500);
+      }
+
+      .pw-menu a.iron-selected .about{
+        color: var(--paper-orange-500);
+      }
+
+      .pw-menu a.iron-selected .contact{
+        color: var(--paper-light-green-500);
+      }
 
       iron-pages {
         padding: 15px;
@@ -79,23 +93,24 @@
         <paper-toolbar>
           <div>Pensemos web</div>
         </paper-toolbar>
-        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="inicio" href="/inicio"><paper-icon-button icon="home"></paper-icon-button>Inicio</a>
-          <a name="servicios" href="/servicios"><paper-icon-button icon="build"></paper-icon-button>Servicios</a>
-          <a name="nosotros" href="/nosotros"><paper-icon-button icon="social:group"></paper-icon-button>
-          Conocenos</a>
-          <a href="/contacto"><paper-icon-button icon="perm-phone-msg"></paper-icon-button>Contacto</a>
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list pw-menu" role="navigation">
+          <a name="inicio" href="/inicio"><paper-icon-button class="home" icon="home"></paper-icon-button>Inicio</a>
+          <a name="servicios" href="/servicios"><paper-icon-button class="services" icon="build"></paper-icon-button>Servicios</a>
+          <a name="nosotros" href="/nosotros"><paper-icon-button class="about" icon="social:group"></paper-icon-button>Conocenos</a>
+          <a name="contacto" href="/contacto"><paper-icon-button class="contact" icon="perm-phone-msg"></paper-icon-button>Contacto</a>
         </iron-selector>
       </paper-header-panel>
       
         <paper-header-panel main class="main">
           <template is="dom-if" if={{_showTopMenu(page)}}>
-            <paper-toolbar>
+            <paper-toolbar id="top-menu">
               <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-              <a href="/inicio"><paper-icon-button icon="home"></paper-icon-button></a>
-              <a href="/servicios"><paper-icon-button icon="build"></paper-icon-button></a>
-              <a href="/nosotros"><paper-icon-button icon="social:group"></paper-icon-button></a>
-              <a href="/contacto"><paper-icon-button icon="perm-phone-msg"></paper-icon-button></a>
+              <iron-selector selected="[[page]]" attr-for-selected="name" class="pw-menu">
+                <a name="inicio" href="/inicio"><paper-icon-button class="home" icon="home"></paper-icon-button></a>
+                <a name="servicios" href="/servicios"><paper-icon-button class="services" class="services" icon="build"></paper-icon-button></a>
+                <a name="nosotros" href="/nosotros"><paper-icon-button class="about"  icon="social:group"></paper-icon-button></a>
+                <a name="contacto" href="/contacto"><paper-icon-button class="contact" icon="perm-phone-msg"></paper-icon-button></a>
+              </iron-selector>
             </paper-toolbar>
           </template>
           <iron-pages
