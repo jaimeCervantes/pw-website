@@ -8,13 +8,16 @@
 
         padding: 10px;
       }
-
+      
       .pw-circle-container {
-        border: 1px solid var(--paper-orange-500);
+        border: 1px solid #000;
         border-radius: 50%;
-        width: 80px;
-        height: 80px;
+        width: 150px;
+        height: 150px;
         position: relative;
+        float: left;
+        margin-right: 10px;
+        margin-bottom: 20px;
       }
 
       .pw-circle {
@@ -22,9 +25,15 @@
         height: 90%;
         margin-top: 5%;
         margin-left: 5%;
-        background-color: var(--paper-orange-500);
         border-radius: 50%;
         color: #fff;
+      }
+
+      .pw-circle a,
+      .pw-circle a:focus,
+      .pw-circle a:hover,
+      .pw-circle a:visited {
+        color: inherit;
       }
 
       .pw-circle paper-icon-button {
@@ -32,20 +41,79 @@
         height:100%;
         padding:15px;
       }
+
+      /*container circle border color*/
+      .home {
+        border-color: var(--paper-red-500);
+      }
+
+      .services {
+        border-color: var(--paper-blue-500);
+      }
+
+      .about {
+        border-color: var(--paper-orange-500);
+      }
+
+      .contact {
+        border-color: var(--paper-light-green-500);
+      }
+
+      /*Circle background color*/
+      .home .pw-circle{
+        background-color: var(--paper-red-500);
+      }
+
+      .services .pw-circle{
+        background-color: var(--paper-blue-500);
+      }
+
+      .about .pw-circle{
+        background-color: var(--paper-orange-500);
+      }
+
+      .contact .pw-circle{
+        background-color: var(--paper-light-green-500);
+      }
+
+      
+      /*Material design ripple color*/
+      .home paper-ripple{
+        color: var(--paper-red-500);
+      }
+
+      .services paper-ripple{
+        color: var(--paper-blue-500);
+      }
+
+      .about paper-ripple{
+        color: var(--paper-orange-500);
+      }
+
+      .contact paper-ripple{
+        color: var(--paper-light-green-500);
+      }
     </style>
 
-    <div class="pw-content">
-      <h1>Inicio</h1>
-      
-      <div class="pw-circle-container about">
+    <div class="pw-content">      
+      <div class="pw-circle-container services">
+        <paper-ripple center></paper-ripple>
         <div class="pw-circle">
-          <paper-icon-button icon="social:group"></paper-icon-button>
+          <a href="/servicios"><paper-icon-button icon="build"></paper-icon-button></a>
         </div>
       </div>
 
-      <div class="pw-circle-container services">
+      <div class="pw-circle-container about">
+        <paper-ripple center></paper-ripple>
         <div class="pw-circle">
-          <paper-icon-button icon="build"></paper-icon-button>
+          <a href="/nosotros"><paper-icon-button icon="social:group"></paper-icon-button></a>
+        </div>
+      </div>
+
+      <div class="pw-circle-container contact">
+        <paper-ripple center></paper-ripple>
+        <div class="pw-circle">
+          <a href="/contacto"><paper-icon-button icon="perm-phone-msg"></paper-icon-button></a>
         </div>
       </div>
 
