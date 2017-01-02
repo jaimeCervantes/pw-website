@@ -8,10 +8,47 @@
 
         padding: 10px;
       }
+
+      .pw-circle-container {
+        border: 1px solid var(--paper-orange-500);
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        position: relative;
+      }
+
+      .pw-circle {
+        width: 90%;
+        height: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        background-color: var(--paper-orange-500);
+        border-radius: 50%;
+        color: #fff;
+      }
+
+      .pw-circle paper-icon-button {
+        width:100%;
+        height:100%;
+        padding:15px;
+      }
     </style>
 
-    <div class="card">
+    <div class="pw-content">
       <h1>Inicio</h1>
+      
+      <div class="pw-circle-container about">
+        <div class="pw-circle">
+          <paper-icon-button icon="social:group"></paper-icon-button>
+        </div>
+      </div>
+
+      <div class="pw-circle-container services">
+        <div class="pw-circle">
+          <paper-icon-button icon="build"></paper-icon-button>
+        </div>
+      </div>
+
       <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
       <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
     </div>

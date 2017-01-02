@@ -80,19 +80,24 @@
           <div>Pensemos web</div>
         </paper-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-          <a name="inicio" href="/inicio">Inicio</a>
-          <a name="servicios" href="/servicios">Servicios</a>
-          <a name="nosotros" href="/nosotros">Conocenos</a>
+          <a name="inicio" href="/inicio"><paper-icon-button icon="home"></paper-icon-button>Inicio</a>
+          <a name="servicios" href="/servicios"><paper-icon-button icon="build"></paper-icon-button>Servicios</a>
+          <a name="nosotros" href="/nosotros"><paper-icon-button icon="social:group"></paper-icon-button>
+          Conocenos</a>
+          <a href="/contacto"><paper-icon-button icon="perm-phone-msg"></paper-icon-button>Contacto</a>
         </iron-selector>
       </paper-header-panel>
-      <template is="dom-if" if={{_showTopMenu(page)}}>
+      
         <paper-header-panel main class="main">
-          <paper-toolbar>
-            <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
-            <a href="/inicio"><paper-icon-button icon="home"></paper-icon-button></a>
-            <a href="/servicios"><paper-icon-button icon="build"></paper-icon-button></a>
-            <a href="/nosotros"><paper-icon-button icon="social:group"></paper-icon-button></a>
-          </paper-toolbar>
+          <template is="dom-if" if={{_showTopMenu(page)}}>
+            <paper-toolbar>
+              <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+              <a href="/inicio"><paper-icon-button icon="home"></paper-icon-button></a>
+              <a href="/servicios"><paper-icon-button icon="build"></paper-icon-button></a>
+              <a href="/nosotros"><paper-icon-button icon="social:group"></paper-icon-button></a>
+              <a href="/contacto"><paper-icon-button icon="perm-phone-msg"></paper-icon-button></a>
+            </paper-toolbar>
+          </template>
           <iron-pages
               selected="[[page]]"
               attr-for-selected="name"
@@ -101,10 +106,11 @@
             <pw-home name="inicio" domain="{{urlApi}}" loading="{{loading}}"></pw-home>
             <pw-services name="servicios"></pw-services>
             <pw-about name="nosotros"></pw-about>
+            <pw-contact name="contacto"></pw-contact>
             <pw-view404 name="view404"></pw-view404>
           </iron-pages>
         </paper-header-panel>  
-      </template>
+      
       
     </paper-drawer-panel>  
 
