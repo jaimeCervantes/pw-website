@@ -1,0 +1,158 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<!-- For the main layout of the website -->
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/paper-header-panel/paper-header-panel.html">
+<link rel="import" href="../bower_components/paper-drawer-panel/paper-drawer-panel.html">
+
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/iron-icons/social-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="./pw-theme.html">
+
+<dom-module id="pw-main">
+  <template>
+    <style>
+      :host {
+        --app-primary-color: #fff;
+        --app-secondary-color: black;
+        --app-main-bg-color: #fff;
+        display: block;
+      }
+
+     paper-drawer-panel {
+        --paper-drawer-panel-left-drawer-container: {
+          background-color: #fff;
+        };
+
+        --paper-drawer-panel-main-container: {
+          background-color: #fff;
+        };
+      }
+
+      .drawer-list a {
+        display: block;
+
+        padding: 0 16px;
+
+        text-decoration: none;
+
+        color: var(--app-secondary-color);
+
+        line-height: 40px;
+        outline:none;
+      }
+
+      paper-toolbar a,
+      paper-toolbar a:focus,
+      paper-toolbar a:hover,
+      paper-toolbar a:visited {
+        text-decoration: none;
+        color:#000;
+      }
+
+      .drawer-list a.iron-selected {
+        color: black;
+
+        font-weight: bold;
+      }
+
+
+      iron-pages {
+        padding: 15px;
+      }
+    </style>
+
+    <app-location route="{{route}}"></app-location>
+    <app-route
+        route="{{route}}"
+        pattern="/:page"
+        data="{{routeData}}"
+        tail="{{subroute}}"></app-route>
+
+    <paper-drawer-panel force-narrow>
+      <paper-header-panel drawer>
+        <paper-toolbar>
+          <div>Pensemos web</div>
+        </paper-toolbar>
+        <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
+          <a name="inicio" href="/inicio">Inicio</a>
+          <a name="servicios" href="/servicios">Servicios</a>
+          <a name="nosotros" href="/nosotros">Conocenos</a>
+        </iron-selector>
+      </paper-header-panel>
+      <template is="dom-if" if={{_showTopMenu(page)}}>
+        <paper-header-panel main class="main">
+          <paper-toolbar>
+            <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
+            <a href="/inicio"><paper-icon-button icon="home"></paper-icon-button></a>
+            <a href="/servicios"><paper-icon-button icon="build"></paper-icon-button></a>
+            <a href="/nosotros"><paper-icon-button icon="social:group"></paper-icon-button></a>
+          </paper-toolbar>
+          <iron-pages
+              selected="[[page]]"
+              attr-for-selected="name"
+              fallback-selection="view404"
+              role="main">
+            <pw-home name="inicio" domain="{{urlApi}}" loading="{{loading}}"></pw-home>
+            <pw-services name="servicios"></pw-services>
+            <pw-about name="nosotros"></pw-about>
+            <pw-view404 name="view404"></pw-view404>
+          </iron-pages>
+        </paper-header-panel>  
+      </template>
+      
+    </paper-drawer-panel>  
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'pw-main',
+
+      properties: {
+        page: {
+          type: String,
+          reflectToAttribute: true,
+          observer: '_pageChanged'
+        },
+        urlApi: {
+          type: String,
+          value: 'http://localhost:5000',
+          notify: true
+        },
+        loading: {
+          type: Boolean,
+          value: true
+        }
+      },
+
+      observers: [
+        '_routePageChanged(routeData.page)',
+        '_showTopMenu(page)'
+      ],
+
+      _routePageChanged: function(page) {
+        this.page = page || 'inicio';
+      },
+
+      _showTopMenu: function(page){
+        return page!=='inicio';
+      },
+
+      _pageChanged: function(page) {
+        // Load page import on demand. Show 404 page if fails
+        var resolvedPageUrl = this.resolveUrl('pw-' + page + '.html');
+        this.importHref(resolvedPageUrl, null, this._showPage404, true);
+      },
+
+      _showPage404: function() {
+        this.page = 'view404';
+      }
+    });
+  </script>
+</dom-module>
