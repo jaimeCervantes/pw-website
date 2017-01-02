@@ -4,8 +4,8 @@
   "fragments": [
     "src/pw-main.html",
     "src/pw-inicio.html",
-    "src/pw-nosotros.html",
     "src/pw-servicios.html",
+    "src/pw-nosotros.html",
     "src/pw-view404.html"
   ],
   "sourceGlobs": [

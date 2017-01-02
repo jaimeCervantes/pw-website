@@ -15,8 +15,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <meta name="generator" content="Polymer Starter Kit">
     <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-    <title>My App</title>
-    <meta name="description" content="My App description">
+    <title>Pensemos Web</title>
+    <meta name="description" content="Desarrollo de software con tecnologías web">
 
     <link rel="icon" href="/images/favicon.ico">
 
@@ -28,12 +28,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
     <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="My App">
+    <meta name="application-name" content="Pensemos Web">
 
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="My App">
+    <meta name="apple-mobile-web-app-title" content="PensemosWeb">
 
     <!-- Homescreen icons -->
     <link rel="apple-touch-icon" href="/images/manifest/icon-48x48.png">
@@ -87,13 +87,16 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       })();
 
       // Load pre-caching Service Worker
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-          navigator.serviceWorker.register('/service-worker.js');
-        });
-      }
+      // JCV commented because we are using platinum-sw-register
+      // if ('serviceWorker' in navigator) {
+      //   window.addEventListener('load', function() {
+      //     navigator.serviceWorker.register('/service-worker.js');
+      //   });
+      // }
     </script>
-
+    
+    <link rel="import" href="bower_components/platinum-sw/platinum-sw-elements.html">
+    <link rel="import" href="bower_components/polymerfire/firebase-app.html">
     <link rel="import" href="/src/pw-main.html">
 
     <style>
@@ -107,6 +110,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </style>
   </head>
   <body>
+    <platinum-sw-register
+      auto-register
+      skip-waiting
+      clients-claim
+      reload-on-install
+      href="sw-import.js">
+      <platinum-sw-cache
+        default-cache-strategy="networkFirst">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+    
+    <firebase-app
+      name="pensemosweb"
+      api-key="AIzaSyCuG8AhNLthc6GrDhmrAfhIRFXPCcLyrck"
+      auth-domain="pensemosweb.firebaseapp.com"
+      database-url="https://pensemosweb.firebaseio.com">
+  </firebase-app>
+
     <pw-main></pw-main>
     <!-- Built with love using Polymer Starter Kit -->
   </body>

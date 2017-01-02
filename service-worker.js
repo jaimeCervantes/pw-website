@@ -10,6 +10,9 @@
 
 /* eslint no-console: ["error", { allow: ["info"] }] */
 
-console.info(
+/*console.info(
   'Service worker disabled for development, will be generated at build time.'
-);
+)*/;
+
+//Firebase ask to add this line
+importScripts('bower_components/platinum-sw/service-worker.js');
