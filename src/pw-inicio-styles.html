@@ -1,0 +1,131 @@
+<dom-module id="pw-home-styles">
+  <template>
+    <style >
+      :host {
+        display: block;
+      }
+
+      img.logo {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 70px;
+      }
+
+      .pw-links-container {
+        overflow: auto;
+        margin: 0 auto;
+      }
+
+      .pw-circle-wrapper {
+        width: 29%;
+        margin-left:2%;
+        margin-right: 2%;
+        margin-bottom: 15px;
+        float: left;
+        position: relative;
+      }
+      
+      .pw-circle-container {
+        border: 1px solid #000;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      @media screen and (max-width: 600px)  {
+        img.logo {
+          margin-bottom: 30px;
+        }
+
+        .pw-circle-wrapper {
+          width: 46%;
+          margin-left: 2%;
+          margin-right: 2%;  
+        }
+
+        .pw-circle-container {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      .pw-circle {
+        width: 90%;
+        height: 90%;
+        margin-top: 5%;
+        margin-left: 5%;
+        border-radius: 50%;
+        color: #fff;
+      }
+
+      .pw-circle a,
+      .pw-circle a:focus,
+      .pw-circle a:hover,
+      .pw-circle a:visited {
+        color: inherit;
+      }
+
+      .pw-circle paper-icon-button {
+        width:100%;
+        height:100%;
+        padding:15px;
+      }
+
+      /*container circle border color*/
+      .home {
+        border-color: var(--paper-red-500);
+      }
+
+      .services {
+        border-color: var(--paper-blue-500);
+      }
+
+      .about {
+        border-color: var(--paper-orange-500);
+      }
+
+      .contact {
+        border-color: var(--paper-light-green-500);
+      }
+
+      /*Circle background color*/
+      .home .pw-circle{
+        background-color: var(--paper-red-500);
+      }
+
+      .services .pw-circle{
+        background-color: var(--paper-blue-500);
+      }
+
+      .about .pw-circle{
+        background-color: var(--paper-orange-500);
+      }
+
+      .contact .pw-circle{
+        background-color: var(--paper-light-green-500);
+      }
+
+      
+      /*Material design ripple color*/
+      .home paper-ripple{
+        color: var(--paper-red-500);
+      }
+
+      .services paper-ripple{
+        color: var(--paper-blue-500);
+      }
+
+      .about paper-ripple{
+        color: var(--paper-orange-500);
+      }
+
+      .contact paper-ripple{
+        color: var(--paper-light-green-500);
+      }
+    </style>
+  </template>
+</dom-module>
