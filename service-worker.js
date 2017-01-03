@@ -15,4 +15,4 @@
 )*/;
 
 //Firebase ask to add this line
-importScripts('bower_components/platinum-sw/service-worker.js');
+importScripts('./bower_components/platinum-sw/service-worker.js');
