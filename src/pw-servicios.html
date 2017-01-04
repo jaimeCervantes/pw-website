@@ -1,4 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icons/device-icons.html">
+<link rel="import" href="../bower_components/iron-icons/communication-icons.html">
+<link rel="import" href="../bower_components/iron-icons/hardware-icons.html">
 
 <dom-module id="pw-services">
   <template>
@@ -6,16 +9,79 @@
     <style >
       :host {
         display: block;
+      }
 
-        padding: 10px;
+      h1 {
+        text-align: center;
+      }
+
+      .serv-icon-wrapper {
+        float: left;
+        width: 22%;
+        margin-left:2%;
+        margin-right: 2%;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      @media screen and (max-width: 900px)  {
+        .serv-icon-wrapper {
+          width: 46%;
+          margin-left: 2%;
+          margin-right: 2%;  
+        }
+      }
+
+      .serv-icon-wrapper:first-child {
+        margin-left: 0;
+      }
+
+      .serv-icon-wrapper:last-child {
+        margin-right: 0;
+      }
+
+      .serv-icon-wrapper iron-icon {
+        width: 3rem;
+        height: 3rem;
+        color: var(--paper-blue-500);
       }
     </style>
 
-    <div class="card">
       <h1>Servicios</h1>
-      <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-      <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
-    </div>
+      <div class="services-icons">
+        <div class="serv-icon-wrapper">
+          <div class="serv-icon-container">
+            <iron-icon icon="social:public"></iron-icon>
+            <iron-icon icon="social:poll"></iron-icon>
+          </div>
+          <h3>Páginas web y blogs</h3>
+        </div>
+        
+        <div class="serv-icon-wrapper">
+          <div class="serv-icon-container">
+            <iron-icon icon="hardware:smartphone"></iron-icon>
+            <iron-icon icon="hardware:tablet-android"></iron-icon>
+          </div>
+          <h3>Aplicaciones móviles</h3>
+        </div>
+
+        <div class="serv-icon-wrapper">
+          <div class="serv-icon-container">
+            <iron-icon icon="icons:settings"></iron-icon>
+            <iron-icon icon="hardware:keyboard"></iron-icon>
+          </div>
+          <h3>Sistemas y bases de datos</h3>
+        </div>
+      
+        <div class="serv-icon-wrapper">
+          <div class="serv-icon-container">
+            <iron-icon icon="icons:shopping-cart"></iron-icon>
+            <iron-icon icon="icons:store"></iron-icon>
+          </div>
+          <h3>Tiendas en linea</h3>
+        </div>
+
+      </div>
   </template>
 
   <script>
