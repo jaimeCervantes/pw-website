@@ -4,6 +4,8 @@
   <head>
     <title>Página no encontrada</title>
     <link rel="import" href="./bower_components/paper-styles/typography.html">
+    <link rel="import" href="./bower_components/paper-ripple/paper-ripple.html">
+    <link rel="import" href="./bower_components/iron-icons/iron-icons.html">
     <link rel="import" href="./bower_components/iron-icons/social-icons.html">
     <style>
       body {
@@ -41,6 +43,14 @@
         line-height: 1.8em;
         text-align: center;
       }
+
+      a,a:focus,a:hover,a:visited {
+        color: inherit;
+        text-decoration: none;
+        display: inline-block;
+        position: relative;
+        padding:8px;
+      }
     </style>
     <style is="custom-style">
       .big {
@@ -54,5 +64,11 @@
     <h1><iron-icon class="big" icon="social:sentiment-very-dissatisfied"></iron-icon></h1>
     <p>¡Parece que no podemos ver esta página!</p>
     <p>Te recomendamos revisar que la url sea correcta.</p>
+    <p>
+      <a href="/">
+        <iron-icon class="medium" icon="arrow-back"></iron-icon>Regresar el inicio
+        <paper-ripple center></paper-ripple>
+      </a>
+    </p>
   </body>
 </html>
