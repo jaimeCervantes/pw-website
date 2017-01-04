@@ -1,0 +1,84 @@
+<dom-module id="pw-main-styles">
+  <template>
+    <style>
+      :host {
+        --app-primary-color: #fff;
+        --app-secondary-color: black;
+        --app-main-bg-color: #fff;
+        display: block;
+      }
+
+     paper-drawer-panel {
+        --paper-drawer-panel-left-drawer-container: {
+          background-color: #fff;
+        };
+
+        --paper-drawer-panel-main-container: {
+          background-color: #fff;
+        };
+      }
+
+      .drawer-list a {
+        display: block;
+
+        padding: 0 16px;
+
+        text-decoration: none;
+
+        color: var(--app-secondary-color);
+
+        line-height: 40px;
+        outline:none;
+      }
+
+      paper-toolbar a,
+      paper-toolbar a:focus,
+      paper-toolbar a:hover,
+      paper-toolbar a:visited {
+        text-decoration: none;
+        color:#000;
+      }
+
+      :host([page="inicio"]) paper-toolbar {
+        border-bottom: 1px solid var(--paper-red-500);
+      }
+
+      :host([page="servicios"]) paper-toolbar {
+        border-bottom: 1px solid var(--paper-blue-500);
+      }
+
+      :host([page="nosotros"]) paper-toolbar {
+        border-bottom: 1px solid var(--paper-orange-500);
+      }
+
+      :host([page="contacto"]) paper-toolbar {
+        border-bottom: 1px solid var(--paper-light-green-500);
+      }
+
+      .drawer-list a.iron-selected {
+        color: black;
+        font-weight: bold;
+      }
+
+      .pw-menu a.iron-selected .home{
+        color: var(--paper-red-500);
+      }
+
+      .pw-menu a.iron-selected .services{
+        color: var(--paper-blue-500);
+      }
+
+      .pw-menu a.iron-selected .about{
+        color: var(--paper-orange-500);
+      }
+
+      .pw-menu a.iron-selected .contact{
+        color: var(--paper-light-green-500);
+      }
+
+      iron-pages {
+        padding: 15px;
+      }
+    </style>
+  </template>
+</dom-module>

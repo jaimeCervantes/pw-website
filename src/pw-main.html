@@ -13,74 +13,11 @@
 <link rel="import" href="../bower_components/iron-icons/social-icons.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="./pw-theme.html">
+<link rel="import" href="./pw-main-styles.html">
 
 <dom-module id="pw-main">
   <template>
-    <style>
-      :host {
-        --app-primary-color: #fff;
-        --app-secondary-color: black;
-        --app-main-bg-color: #fff;
-        display: block;
-      }
-
-     paper-drawer-panel {
-        --paper-drawer-panel-left-drawer-container: {
-          background-color: #fff;
-        };
-
-        --paper-drawer-panel-main-container: {
-          background-color: #fff;
-        };
-      }
-
-      .drawer-list a {
-        display: block;
-
-        padding: 0 16px;
-
-        text-decoration: none;
-
-        color: var(--app-secondary-color);
-
-        line-height: 40px;
-        outline:none;
-      }
-
-      paper-toolbar a,
-      paper-toolbar a:focus,
-      paper-toolbar a:hover,
-      paper-toolbar a:visited {
-        text-decoration: none;
-        color:#000;
-      }
-
-      .drawer-list a.iron-selected {
-        color: black;
-        font-weight: bold;
-      }
-
-      .pw-menu a.iron-selected .home{
-        color: var(--paper-red-500);
-      }
-
-      .pw-menu a.iron-selected .services{
-        color: var(--paper-blue-500);
-      }
-
-      .pw-menu a.iron-selected .about{
-        color: var(--paper-orange-500);
-      }
-
-      .pw-menu a.iron-selected .contact{
-        color: var(--paper-light-green-500);
-      }
-
-      iron-pages {
-        padding: 15px;
-      }
-    </style>
-
+    <style include="pw-main-styles"></style>
     <app-location route="{{route}}"></app-location>
     <app-route
         route="{{route}}"
