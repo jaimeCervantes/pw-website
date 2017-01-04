@@ -60,25 +60,60 @@
         font-weight: bold;
       }
 
+      .slide-menu a {
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+
+      .slide-menu a paper-icon-button {
+        margin-right: 10px;
+      }
+
+       .pw-menu a.iron-selected paper-icon-button {
+          border-radius: 50%;
+          color: #fff;
+       }
+
       .pw-menu a.iron-selected .home{
-        color: var(--paper-red-500);
+        background-color: var(--paper-red-500);
       }
 
       .pw-menu a.iron-selected .services{
-        color: var(--paper-blue-500);
+        background-color: var(--paper-blue-500);
       }
 
       .pw-menu a.iron-selected .about{
-        color: var(--paper-orange-500);
+        background-color: var(--paper-orange-500);
       }
 
       .pw-menu a.iron-selected .contact{
-        color: var(--paper-light-green-500);
+        background-color: var(--paper-light-green-500);
       }
 
       iron-pages {
         padding: 15px;
       }
+
+      /*Material design ripple color for paper-icon-button in the top menu*/
+      .home {
+        color: var(--paper-red-500);
+        --paper-icon-button-ink-color: var(--paper-red-500);
+      }
+
+      .services {
+        color: var(--paper-blue-500);
+        --paper-icon-button-ink-color: var(--paper-blue-500);
+      }
+
+      .about {
+        color: var(--paper-orange-500);
+        --paper-icon-button-ink-color: var(--paper-orange-500);
+      }
+
+      .contact {
+        color: var(--paper-light-green-500);
+        --paper-icon-button-ink-color: var(--paper-light-green-500);
+      } 
     </style>
   </template>
 </dom-module>
