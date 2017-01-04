@@ -39,7 +39,6 @@
       </paper-header-panel>
       
         <paper-header-panel main class="main">
-          <template is="dom-if" if={{_showTopMenu(page)}}>
             <paper-toolbar id="top-menu">
               <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
               <iron-selector selected="[[page]]" attr-for-selected="name" class="pw-menu">
@@ -49,7 +48,6 @@
                 <a name="contacto" href="/contacto"><paper-icon-button class="contact" icon="perm-phone-msg"></paper-icon-button></a>
               </iron-selector>
             </paper-toolbar>
-          </template>
           <iron-pages
               selected="[[page]]"
               attr-for-selected="name"
@@ -96,10 +94,6 @@
 
       _routePageChanged: function(page) {
         this.page = page || 'inicio';
-      },
-
-      _showTopMenu: function(page){
-        return page!=='inicio';
       },
 
       _pageChanged: function(page) {
