@@ -96,7 +96,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     </script>
     
     <link rel="import" href="./bower_components/platinum-sw/platinum-sw-elements.html">
-    <link rel="import" href="./bower_components/polymerfire/firebase-app.html">
+    <link rel="import" href="./bower_components/polymerfire/polymerfire.html">
     <link rel="import" href="./src/pw-main.html">
   </head>
   <body>
@@ -115,7 +115,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       name="pensemosweb"
       api-key="AIzaSyCuG8AhNLthc6GrDhmrAfhIRFXPCcLyrck"
       auth-domain="pensemosweb.firebaseapp.com"
-      database-url="https://pensemosweb.firebaseio.com">
+      database-url="https://pensemosweb.firebaseio.com"
+
+      storage-bucket="pensemosweb.appspot.com",
+      messaging-senderId="817738319580"
+      >
   </firebase-app>
 
     <pw-main></pw-main>

@@ -1,4 +1,10 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+
 
 <dom-module id="pw-contact">
   <template>
@@ -6,19 +12,141 @@
     <style >
       :host {
         display: block;
+        --paper-input-container-focus-color: var(--paper-light-green-500);
+      }
+
+      #form {
+        margin-bottom: 15px;
+        
+      }
+
+      #form iron-icon[prefix] {
+        margin-right: 10px;
+      }
+
+      #form paper-input[focused] iron-icon, .msg-icon {
+        color: var(--paper-light-green-500); 
+      }
+
+      .send-button-container {
+        margin-top:20px;
+        text-align: center;
+      }
+
+      .send-button-container paper-button {
+        padding-right: 50px;
+        background-color: var(--paper-light-green-500);
+        color: #fff;
+        font-weight: 300;
+        text-transform: none;
+      }
+
+      .send-button-container paper-button paper-spinner {
+        margin-right: 10px;
+      }
+
+      .response-msg {
+        transition: all 1s ease;
+        text-align:center;
+        font-weight: bold;
+        margin-top: 20px;
+        opacity: 0;
+      }
+
+      .show {
+        opacity: 1;
       }
     </style>
 
+      <firebase-document
+        id="contact_message"
+        app-name="pensemosweb"
+        path="[[path]]"
+        data="{{messageData}}">    
+      </firebase-document>
+
     <div class="content">
       <h1>Contacto</h1>
-      <p>Modus commodo minimum eum te, vero utinam assueverit per eu.</p>
-      <p>Ea duis bonorum nec, falli paulo aliquid ei eum.Has at minim mucius aliquam, est id tempor laoreet.Pro saepe pertinax ei, ad pri animal labores suscipiantur.</p>
+      <form is="iron-form" id="form">
+        <paper-input name="name" value="{{messageData.name}}" label="Nombre" required auto-validate error-message="Ingresa un nombre valido.">
+          <iron-icon icon="face" prefix></iron-icon>
+        </paper-input>
+        <paper-input name="email" value="{{messageData.email}}" label="E-mail" required auto-validate error-message="Ingresa un email valido." pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$">
+          <iron-icon icon="mail" prefix></iron-icon>
+        </paper-input>
+        <paper-input name="phone" value="{{messageData.phone}}" label="Teléfono" required auto-validate error-message="Ingresa un teléfono valido." pattern="^\+?\d{1,3}?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$">
+          <iron-icon icon="perm-phone-msg" prefix></iron-icon>
+        </paper-input>
+        
+        <br>
+        <paper-textarea name="message" value="{{messageData.message}}" label="Mensaje" 
+          always-float-label required auto-validate error-message="Ingresa un mensaje valido."
+          rows="2">
+        </paper-textarea>
+
+        <div class="send-button-container">
+          <paper-button raised on-tap="sentMessage">
+            <paper-spinner id="spinner" active="[[isLoading]]" hidden$="[[!isLoading]]"></paper-spinner>
+            Enviar mensaje
+          </paper-button>  
+        </div>
+
+        <div class$="response-msg [[responseClass]]">
+          Tu mensaje fue enviado con exito. En breve te responderemos.
+        </div>
+      </form>
+      
+      
+
     </div>
   </template>
 
   <script>
     Polymer({
       is: 'pw-contact',
+      properties: {
+        path: {
+          type: String,
+          value: '/contact-messages'
+        },
+        isResponded: {
+          type: Boolean,
+          value: false,
+          observer: "_addResponseClass"
+        },
+        messageData: {
+          type: Object, 
+          value: {
+            name: '',
+            email: '',
+            phone: '',
+            message: ''
+          }
+        }
+      },
+      _addResponseClass: function (){
+        if(this.isResponded) {
+          this.responseClass = 'show';  
+        } else {
+          this.responseClass = '';  
+        }
+        
+      },
+      sentMessage: function() {
+        this.isResponded = false;
+        if(this.$.form.validate()) {
+          this.isLoading = true;
+          this.$.contact_message
+          .save(this.path)
+          .then(function() {
+            this.isResponded = true;
+            this.isLoading = false;
+            this.$.form.reset()
+            this.$.contact_message.reset();
+          }.bind(this)); 
+        }
+         
+      }
     });
   </script>
 </dom-module>
