@@ -55,6 +55,10 @@
         border-bottom: 1px solid var(--paper-light-green-500);
       }
 
+      :host([page="proyectos"]) paper-toolbar {
+        border-bottom: 1px solid var(--paper-amber-500, #ffc107);
+      }
+
       .drawer-list a.iron-selected {
         color: black;
         font-weight: bold;
@@ -90,6 +94,10 @@
         background-color: var(--paper-light-green-500);
       }
 
+      .pw-menu a.iron-selected .work{
+        background-color: var(--paper-amber-500, #ffc107);
+      }
+
       iron-pages {
         padding-left: 25px;
         padding-right: 25px;
@@ -116,6 +124,11 @@
       .contact {
         color: var(--paper-light-green-500);
         --paper-icon-button-ink-color: var(--paper-light-green-500);
+      }
+
+      .work {
+        color: var(--paper-amber-500, #ffc107);
+        --paper-icon-button-ink-color: var(--paper-amber-500, #ffc107);
       } 
     </style>
   </template>
