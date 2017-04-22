@@ -14,17 +14,18 @@
       }
 
       .pw-links-container {
-        overflow: auto;
-        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content:space-around;
       }
 
       .pw-circle-wrapper {
-        width: 29%;
+        flex-grow: 1;
         margin-left:2%;
         margin-right: 2%;
         margin-bottom: 15px;
-        float: left;
-        position: relative;
         text-align: center;
       }
 
@@ -48,9 +49,8 @@
         }
 
         .pw-circle-wrapper {
-          width: 46%;
           margin-left: 2%;
-          margin-right: 2%;  
+          margin-right: 2%; 
         }
 
         .pw-circle-container {
@@ -98,6 +98,10 @@
         border-color: var(--paper-light-green-500);
       }
 
+      .work {
+        border-color: var(--paper-amber-500, #ffc107);
+      }
+
       /*Circle background color*/
       .home .pw-circle{
         background-color: var(--paper-red-500);
@@ -115,6 +119,10 @@
         background-color: var(--paper-light-green-500);
       }
 
+      .work .pw-circle{
+        background-color: var(--paper-amber-500, #ffc107);
+      }
+
       /*Material design ripple color for circle buttons*/
       .home paper-ripple{
         color: var(--paper-red-500);
@@ -130,6 +138,10 @@
 
       .contact paper-ripple{
         color: var(--paper-light-green-500);
+      }
+
+      .work paper-ripple{
+        color: var(--paper-amber-500, #ffc107);
       }
     </style>
   </template>
