@@ -10,6 +10,10 @@
         display: block;
       }
 
+      .services-icons {
+        margin-top: 60px;
+      }
+
       .serv-icon-wrapper {
         float: left;
         width: 22%;
@@ -19,9 +23,10 @@
         text-align: left;
       }
 
-      .serv-icon-wrapper h3,
+      .serv-icon-wrapper h2,
       .serv-icon-wrapper .serv-icon-container {
         text-align: center;
+        margin-top: 0;
       }
 
       @media screen and (max-width: 900px)  {
@@ -45,23 +50,33 @@
         height: 3rem;
         color: var(--paper-blue-500);
       }
+
+      .highlight {
+        font-weight: bold; 
+      }
+
+      h3 {
+        margin-top: 0;
+        margin-bottom: 15px;
+      }
+
     </style>
     <div class="content">
       <h1>Servicios</h1>
+      <h3>Nos especializamos en <span class="highlight">JavaScript</span>, uno de los mejores lenguajes de programación. Creamos servidores con <span class="highlight">Node.js</span>, base de datos con <span class="highlight">MongoDB</span>, interfaces gráficas con <span class="highlight">Polymer</span>, <span class="highlight">Ionic</span> y <span class="highlight">Angular</span>.</h3>
+
+      <h3>También desarrollamos con <span class="highlight">PHP</span>, base de datos con <span class="highlight">MySQL</span> y utilizamos sistemas basados en estas dos tecnologías, tales como <span class="highlight">Prestashop</span> y <span class="highlight">Wordpress</span></h3>
+
+      <h3>Elegimos la mejor tecnología dependiendo de las necesidades del proyecto.</h3>
+
+
       <div class="services-icons">
         <div class="serv-icon-wrapper">
           <div class="serv-icon-container">
             <iron-icon icon="social:public"></iron-icon>
             <iron-icon icon="social:poll"></iron-icon>
           </div>
-          <h3>Páginas web y blogs</h3>
-          <p>Internet marketing es tu página web, debe tener una experiencia de usuario adecuada para tu audiencia:</p>
-          <ul>
-            <li>Útil</li>
-            <li>Fácil de usar</li>
-            <li>Atractiva</li>
-            <li>Contenido fácil de hallar</li>
-          </ul>
+          <h2>Páginas web y blogs</h2>
         </div>
         
         <div class="serv-icon-wrapper">
@@ -69,7 +84,7 @@
             <iron-icon icon="hardware:smartphone"></iron-icon>
             <iron-icon icon="hardware:tablet-android"></iron-icon>
           </div>
-          <h3>Aplicaciones móviles</h3>
+          <h2>Aplicaciones móviles</h2>
         </div>
 
         <div class="serv-icon-wrapper">
@@ -77,7 +92,7 @@
             <iron-icon icon="icons:settings"></iron-icon>
             <iron-icon icon="hardware:keyboard"></iron-icon>
           </div>
-          <h3>Sistemas y bases de datos</h3>
+          <h2>Sistemas y bases de datos</h2>
         </div>
       
         <div class="serv-icon-wrapper">
@@ -85,7 +100,7 @@
             <iron-icon icon="icons:shopping-cart"></iron-icon>
             <iron-icon icon="icons:store"></iron-icon>
           </div>
-          <h3>Tiendas en linea</h3>
+          <h2>Tiendas en linea</h2>
         </div>
       </div>
     </div>
