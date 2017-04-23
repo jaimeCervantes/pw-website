@@ -4,60 +4,11 @@
 <link rel="import" href="../bower_components/paper-input/paper-textarea.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
-
+<link rel="import" href="./pw-contact-styles.html">
 
 <dom-module id="pw-contact">
   <template>
-    <style include="pw-shared-styles"></style>
-    <style >
-      :host {
-        display: block;
-        --paper-input-container-focus-color: var(--paper-light-green-500);
-      }
-
-      #form {
-        margin-bottom: 15px;
-        
-      }
-
-      #form iron-icon[prefix] {
-        margin-right: 10px;
-      }
-
-      #form paper-input[focused] iron-icon, .msg-icon {
-        color: var(--paper-light-green-500); 
-      }
-
-      .send-button-container {
-        margin-top:20px;
-        text-align: center;
-      }
-
-      .send-button-container paper-button {
-        padding-right: 50px;
-        background-color: var(--paper-light-green-500);
-        color: #fff;
-        font-weight: 300;
-        text-transform: none;
-      }
-
-      .send-button-container paper-button paper-spinner {
-        margin-right: 10px;
-      }
-
-      .response-msg {
-        transition: all 1s ease;
-        text-align:center;
-        font-weight: bold;
-        margin-top: 20px;
-        opacity: 0;
-      }
-
-      .show {
-        opacity: 1;
-      }
-    </style>
-
+    <style include="pw-shared-styles pw-contact-styles"></style>
       <firebase-document
         id="contact_message"
         app-name="pensemosweb"

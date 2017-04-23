@@ -12,10 +12,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
 <dom-module id="pw-view404">
   <template>
-    <style>
+    <style include="pw-shared-styles">
       :host {
-        display: block;
-
         padding: 10px 20px;
       }
     </style>
@@ -28,8 +26,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   </template>
 
   <script>
-    Polymer({
-      is: 'pw-view404',
+    'use strict';
+    window.Polymer({
+      is: 'pw-view404'
     });
   </script>
 </dom-module>

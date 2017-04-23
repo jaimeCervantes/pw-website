@@ -1,0 +1,55 @@
+<dom-module id="pw-services-styles"><template><style>
+.services-icons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content:space-around;
+}
+
+.serv-icon-wrapper {
+  width: 22%;
+  margin-left:2%;
+  margin-right: 2%;
+  margin-bottom: 15px;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.serv-icon-wrapper h2,
+.serv-icon-wrapper .serv-icon-container {
+  text-align: center;
+  margin-top: 0;
+}
+
+@media screen and (max-width: 900px)  {
+  .serv-icon-wrapper {
+    width: 44%;
+    margin-left: 3%;
+    margin-right: 3%;  
+  }
+}
+
+.serv-icon-wrapper:first-child {
+  margin-left: 0;
+}
+
+.serv-icon-wrapper:last-child {
+  margin-right: 0;
+}
+
+.serv-icon-wrapper iron-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--paper-blue-500);
+}
+
+.highlight {
+  font-weight: 400; 
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+</style></template></dom-module>

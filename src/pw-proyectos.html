@@ -2,15 +2,11 @@
 <link rel="import" href="../bower_components/iron-icons/device-icons.html">
 <link rel="import" href="../bower_components/iron-icons/communication-icons.html">
 <link rel="import" href="../bower_components/iron-icons/hardware-icons.html">
+<link rel="import" href="./pw-proyects-styles.html">
 
 <dom-module id="pw-work">
   <template>
-    <style include="pw-shared-styles">
-      :host {
-        display: block;
-      }
-
-    </style>
+    <style include="pw-shared-styles pw-proyects-styles"></style>
     <div class="content">
       <h1>Proyectos</h1>
 
@@ -18,8 +14,9 @@
   </template>
 
   <script>
-    Polymer({
-      is: 'pw-work',
+    'use strict';
+    window.Polymer({
+      is: 'pw-work'
     });
   </script>
 </dom-module>
