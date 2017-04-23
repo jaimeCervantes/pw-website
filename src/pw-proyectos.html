@@ -1,7 +1,8 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
-<link rel="import" href="../bower_components/iron-icons/device-icons.html">
-<link rel="import" href="../bower_components/iron-icons/communication-icons.html">
-<link rel="import" href="../bower_components/iron-icons/hardware-icons.html">
+<link rel="import" href="../bower_components/iron-icons/iron|-icons.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="./pw-proyects-styles.html">
 
 <dom-module id="pw-work">
@@ -9,7 +10,49 @@
     <style include="pw-shared-styles pw-proyects-styles"></style>
     <div class="content">
       <h1>Proyectos</h1>
+      <div class="proyects-wrapper">
+        <paper-card image="https://firebasestorage.googleapis.com/v0/b/pensemosweb.appspot.com/o/proyects%2Fbuscar-libros%2Fbuscar-libros.jpg?alt=media&token=e8c800dc-7908-4db3-b651-eff759ac6b34" alt="buscar libros" elevation="2" fade-image="true">
+          <div class="card-content">
+            <div class="item-header">Buscar libros</div>
+            <div class="item-content">
+              <p>Aplicación web para encontrar libros, se utilizó:</p>
+              <ul>
+                  <li>Node.js</li>
+                  <li>MongoDB</li>
+                  <li>Polymer</li>
+                  <li>Express.js</li>
+                  <li>Heroku platform</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a class="link-button" href="https://buscar-libros.herokuapp.com/" target="_blank" title="Ver la app">
+              <paper-button class="action-proyects"><iron-icon icon="link"></iron-icon>Ver app</paper-button>
+            </a>
+          </div>
+        </paper-card>
 
+        <paper-card style="max-height: 515px;" image="https://firebasestorage.googleapis.com/v0/b/pensemosweb.appspot.com/o/proyects%2Finstituto-mariano-benavente%2Finstitutomarianobenavente.jpg?alt=media&token=4a2c06c1-bf94-4125-a406-86d2228cb9f8" alt="Instituto Mariano Benavente" elevation="2" fade-image="true">
+          <div class="card-content">
+            <div class="item-header">Instituto Mariano Benavente</div>
+            <div class="item-content">
+              <p>Sitio web y administrador de contenido (CMS), se utilizo:</p>
+              <ul>
+                  <li>PHP</li>
+                  <li>jQuery</li>
+                  <li>Wordpress</li>
+                  <li>Custom post</li>
+                  <li>Se creó un tema desde cero</li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a class="link-button" href="https://buscar-libros.herokuapp.com/" target="_blank" title="Ver la app">
+              <paper-button class="action-proyects"><iron-icon icon="link"></iron-icon>Ver sitio web</paper-button>
+            </a>
+          </div>
+        </paper-card>
+      </div>
     </div>
   </template>
 

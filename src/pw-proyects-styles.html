@@ -1,3 +1,32 @@
 <dom-module id="pw-proyects-styles"><template><style>
+.proyects-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content:space-around;
+}
 
+paper-card {
+  max-width: 300px;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.item-header {
+  @apply(--paper-font-headline);
+}
+
+.card-content {
+  font-weight: 400;
+}
+
+paper-button.action-proyects {
+  font-weight: 400;
+}
+
+paper-button.action-proyects iron-icon {
+  margin-right: 0.3rem;
+}
 </style></template></dom-module>
