@@ -4,6 +4,8 @@
 <link rel="import" href="../bower_components/paper-input/paper-textarea.html">
 <link rel="import" href="../bower_components/paper-button/paper-button.html">
 <link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+<link rel="import" href="../bower_components/iron-icons/hardware-icons.html">
+<link rel="import" href="../bower_components/iron-icons/communication-icons.html">
 <link rel="import" href="./pw-contact-styles.html">
 
 <dom-module id="pw-contact">
@@ -17,11 +19,18 @@
       </firebase-document>
 
     <div class="content">
-      <h1>Contacto</h1>
+      <div class="title-section">
+        <h1>Contacto</h1>
+        <div>
+          <a class="link-button" href="tel:2781092116" title="278 109 2116">
+            <paper-button></iron-icon><iron-icon icon="communication:chat"></iron-icon> 278 109 2116 celular</paper-button>
+          </a>
+        </div>
+      </div>
       <form is="iron-form" id="form">
         <paper-input name="name" value="{{messageData.name}}" label="Nombre" required auto-validate error-message="Ingresa un nombre valido.">
           <iron-icon icon="face" prefix></iron-icon>
-        </paper-input>
+        </paper-input> 
         <paper-input name="email" value="{{messageData.email}}" label="E-mail" required auto-validate error-message="Ingresa un email valido." pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$">
           <iron-icon icon="mail" prefix></iron-icon>
         </paper-input>
