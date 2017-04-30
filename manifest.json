@@ -1,6 +1,6 @@
 {
   "name": "Pensemos web",
-  "scope": "./"
+  "scope": "./",
   "short_name": "PensemosWeb",
   "start_url": "index.html",
   "display": "standalone",
