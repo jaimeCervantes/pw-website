@@ -59,6 +59,10 @@
         border-bottom: 1px solid var(--paper-amber-500, #ffc107);
       }
 
+      :host([page="blog"]) paper-toolbar {
+        border-bottom: 1px solid var(--paper-grey-900, #000);
+      }
+
       .drawer-list a.iron-selected {
         color: black;
         font-weight: bold;
@@ -98,6 +102,10 @@
         background-color: var(--paper-amber-500, #ffc107);
       }
 
+      .pw-menu a.iron-selected .blog{
+        background-color: var(--paper-grey-900, #000);
+      }
+
       iron-pages {
         padding-left: 25px;
         padding-right: 25px;
@@ -129,6 +137,11 @@
       .work {
         color: var(--paper-amber-500, #ffc107);
         --paper-icon-button-ink-color: var(--paper-amber-500, #ffc107);
+      } 
+
+      .blog {
+        color: var(--paper-grey-900, #000);
+        --paper-icon-button-ink-color: var(--paper-grey-900, #000);
       } 
     </style>
   </template>
